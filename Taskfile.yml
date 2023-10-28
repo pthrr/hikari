@@ -1,0 +1,22 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    silent: true
+    cmds:
+      - cmd: task --list-all
+        platforms: [linux]
+      - cmd: task.exe --list-all
+        platforms: [windows]
+
+  make:
+    cmds:
+      - cmd: bmake WITH_POSIX_C_SOURCE=YES WITH_ALL=YES
+        platforms: [linux]
+
+  make_clean:
+    cmds:
+      - cmd: bmake clean && rm version.h
+        platforms: [linux]
