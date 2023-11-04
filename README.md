@@ -92,23 +92,30 @@ repository, breaking changes might be encountered. These are documented in the
 <!-- libudev-dev -->
 <!-- libseat-dev -->
 
-sudo apt install -y \
-libwlroots-dev \
-libpango1.0-dev \
-libcairo2-dev \
-libinput-dev \
-libxkbcommon-dev \
-libpixman-1-dev \
-libpam0g-dev
+Use system package manager:
 
-libucl: <https://github.com/vstakhov/libucl>
+```bash
+sudo apt install -y \
+    libwlroots-dev \
+    libpango1.0-dev \
+    libcairo2-dev \
+    libinput-dev \
+    libxkbcommon-dev \
+    libpixman-1-dev \
+    libpam0g-dev
+```
+
+Install libucl from <https://github.com/vstakhov/libucl>:
+
+```bash
 ./autogen.sh
-./configure
-  --disable-dependency-tracking
-  --disable-silent-rules
-  --enable-utils
+./configure \
+  --disable-dependency-tracking \
+  --disable-silent-rules \
+  --enable-utils \
   --prefix=/usr
 make install
+```
 
 ### Compiling and Installing
 
